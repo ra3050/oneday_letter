@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "191674454720",
+    "project_id": "oneday-letter",
+    "storage_bucket": "oneday-letter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191674454720:android:447bb6aa72862d01f09325",
+        "android_client_info": {
+          "package_name": "kr.sharenshare.apps.myday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191674454720-nhn04l75bjdo4jq7scdac1mlr6bljccv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe_BcKc4qVbMQUGQJk9DPiMd5wJUVjh7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191674454720-nhn04l75bjdo4jq7scdac1mlr6bljccv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
