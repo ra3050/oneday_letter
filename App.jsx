@@ -73,12 +73,12 @@ const Tab = createBottomTabNavigator();
 
 const App = (props) => {
   const [fcmToken, setFcmToken] = useState('');
-  useEffect(()=>{
-    setTimeout(()=>{
+  useEffect(() => {
+    setTimeout(() => {
       SplashScreen.hide();
       console.log('스플레시 화면')
-    },1500)
-  },[])
+    }, 1500)
+  }, [])
   // useEffect(() => {
   //   requestUserPermission();
   // })
@@ -105,12 +105,12 @@ const App = (props) => {
     const enabled =
       authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
       authStatus === messaging.AuthorizationStatus.PROVISIONAL;
-    
+
     if (enabled) {
       return getToken();
     }
   }
-  
+
   const getToken = async () => {
     const fcmToken = await messaging().getToken();
     console.log('디바이스 토큰값');
@@ -122,7 +122,7 @@ const App = (props) => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name='Home' component={Login_page} options={{ headerShown: false, headerTitleAlign: 'center' }} />
-        <Stack.Screen name='Login_Email' component={Login_email_page} options={{ headerBackTitleVisible: false, title: '', headerShadowVisible: false}} />
+        <Stack.Screen name='Login_Email' component={Login_email_page} options={{ headerBackTitleVisible: false, title: '', headerShadowVisible: false }} />
         <Stack.Screen name='Login_Email_Sign' component={Email_sign_Page} />
         <Stack.Screen name='Login_Forgot_Eamil' component={Forgot_email_page} />
         <Stack.Screen name='Login_Forgot_Password' component={Forgot_password_page} />
@@ -130,22 +130,22 @@ const App = (props) => {
         <Stack.Screen name='Login_Authentication_Password' component={Authentication_password_page} />
         <Stack.Screen name='Login_Change_Password' component={Change_password_page} />
         <Stack.Screen name='Login_Find_Email' component={Change_password_page} />
-        <Stack.Screen name='Login_Interest_Choice' component={Interest_Page}/>
-        <Stack.Screen name='Login_Personality_Choice' component={Personality_Page}/>
+        <Stack.Screen name='Login_Interest_Choice' component={Interest_Page} />
+        <Stack.Screen name='Login_Personality_Choice' component={Personality_Page} />
         <Stack.Screen name='Login_Social_Sign' component={Social_Sign_Page} />
-        
-        <Stack.Screen name='Tab_Screen' component={MainTabNavigator} options={{ headerShown: false }}/>
+
+        <Stack.Screen name='Tab_Screen' component={MainTabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name='Main_Letter_Choice' component={Main_Letter_Page} />
-        <Stack.Screen name='Main_Letter_List' component={Main_Letter_List_Page}/>
-        <Stack.Screen name='Main_Letter_Write' component={Main_Write_Page}/>
+        <Stack.Screen name='Main_Letter_List' component={Main_Letter_List_Page} />
+        <Stack.Screen name='Main_Letter_Write' component={Main_Write_Page} />
         <Stack.Screen name='Setting' component={Setting_Page} />
         <Stack.Screen name='Setting_Interest' component={Setting_Interest_Page} />
         <Stack.Screen name='Setting_Personality' component={Setting_Personality_Page} />
-        <Stack.Screen name='Setting_Send' component={Setting_Send_Page}/>
-        <Stack.Screen name='Setting_Receive' component={Setting_Receive_Page}/>
-        <Stack.Screen name='Main_Letter_Content' component={Letter_Content_Page}/>
+        <Stack.Screen name='Setting_Send' component={Setting_Send_Page} />
+        <Stack.Screen name='Setting_Receive' component={Setting_Receive_Page} />
+        <Stack.Screen name='Main_Letter_Content' component={Letter_Content_Page} />
         <Stack.Screen name='Main_Letter_Receive' component={Letter_Receive_Page} />
-        <Stack.Screen name='Main_Letter_Exchange' component={Letter_Exchange_Page}/>
+        <Stack.Screen name='Main_Letter_Exchange' component={Letter_Exchange_Page} />
         <Stack.Screen name='Main_Letter_Exchange_Content' component={Letter_Exchange_Content_page} />
         <Stack.Screen name='Main_Letter_Boast_Content' component={Letter_Ba_Content_Page} />
       </Stack.Navigator>
@@ -157,27 +157,27 @@ const MainTabNavigator = () => {
   return (
     <Tab.Navigator initialRouteName='Main'>
       <Tab.Screen name='Main' component={Main_Page} options={{
-        tabBarIcon: ({focused}) => <Icons name="home" size={25} color={focused ? `#537BCC` : '#dfdfdf'}/>,
-      }}/>
-      <Tab.Screen name='Main_Letter' component={Main_letter_Splash} options={{ 
+        tabBarIcon: ({ focused }) => <Icons name="home" size={25} color={focused ? `#537BCC` : '#dfdfdf'} />,
+      }} />
+      <Tab.Screen name='Main_Letter' component={Main_letter_Splash} options={{
         title: '편지・이야기',
-        tabBarStyle: { display: 'none'},
-        tabBarIcon: ({focused}) => <Icons5 name='email-newsletter' size={22} color={focused ? `#537BCC` : '#dfdfdf'}/>
-      }}/>
-      <Tab.Screen name='Main_Write' component={Main_Write_Splash} options={{ 
+        tabBarStyle: { display: 'none' },
+        tabBarIcon: ({ focused }) => <Icons5 name='email-newsletter' size={22} color={focused ? `#537BCC` : '#dfdfdf'} />
+      }} />
+      <Tab.Screen name='Main_Write' component={Main_Write_Splash} options={{
         title: '글쓰기',
-        tabBarStyle: { display: 'none'},
-        tabBarIcon: ({focused}) => <Icons3 name='send' size={20} color={focused ? `#537BCC` : '#dfdfdf'}/>
-      }}/>
-      <Tab.Screen name='Main_Collect' component={Main_Receive_Collect_Page} options={{ 
+        tabBarStyle: { display: 'none' },
+        tabBarIcon: ({ focused }) => <Icons3 name='send' size={20} color={focused ? `#537BCC` : '#dfdfdf'} />
+      }} />
+      <Tab.Screen name='Main_Collect' component={Main_Receive_Collect_Page} options={{
         title: '다른이야기',
-        tabBarIcon: ({focused}) => <Icons name='collections-bookmark' size={20} color={focused ? `#537BCC` : '#dfdfdf'}/>
+        tabBarIcon: ({ focused }) => <Icons name='collections-bookmark' size={20} color={focused ? `#537BCC` : '#dfdfdf'} />
       }}
       />
       <Tab.Screen name='Tab_My_Info' component={Main_Setting_Page} options={{
         title: 'MY',
-        tabBarIcon: ({focused}) => <Icons4 name='user' size={20} color={focused ? `#537BCC` : '#dfdfdf'}/>
-      }}/>
+        tabBarIcon: ({ focused }) => <Icons4 name='user' size={20} color={focused ? `#537BCC` : '#dfdfdf'} />
+      }} />
     </Tab.Navigator>
   )
 }

@@ -7,9 +7,9 @@ import { Platform } from "react-native";
 export const upload_storage = (props) => {
     const { lt_idx, pathArr } = props;      // 이미지 파일 asset을 전달받는다
 
-    pathArr.assets.map(async(item, index) => {
+    pathArr.assets.map(async (item, index) => {
         const reference = storage().ref(`/${lt_idx}/${index}`);
-        
+
         if (Platform.OS === 'android') { // Android
             await reference.putString(item.base64, "base64", {
                 contentType: item.type
