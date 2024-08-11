@@ -21,4 +21,7 @@
 <br>
 <br>
 
-<div><h1>실행화면</h1></div>
+<div><h1>실행방법</h1></div>
+<h3>AOS: https://play.google.com/store/apps/details?id=kr.sharenshare.apps.myday&pcampaignid=web_share</h3>
+<h3>iOS: https://apps.apple.com/kr/app/하루-편지/id1639296945 </h3>
+
